@@ -1,0 +1,35 @@
+{
+  "name": "dsh-sidebar-panels",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Manage the left global panel list in DSH: show or hide entries, reorder them by dragging, and keep each entry in step with the plugin's own sidebar switch.",
+  "keywords": ["dsh-plugin", "deepseek-harness", "sidebar", "panels", "settings"],
+  "license": "MIT",
+  "author": "NONEMIN",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NONEMIN/dsh-sidebar-panels.git"
+  },
+  "homepage": "https://github.com/NONEMIN/dsh-sidebar-panels#readme",
+  "bugs": {
+    "url": "https://github.com/NONEMIN/dsh-sidebar-panels/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "LICENSE"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings-general",
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ]
+    }
+  }
+}
